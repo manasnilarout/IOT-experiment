@@ -1,13 +1,13 @@
 #include <Servo.h>
-Servo myservo;
+Servo servoExp;
 int pos = 0;
 int state;
 int flag = 0;
 void setup()
 {
-    myservo.attach(9);
+    servoExp.attach(9);
     Serial.begin(9600);
-    myservo.write(60);
+    servoExp.write(60);
     delay(1000);
 }
 void loop()
@@ -19,14 +19,14 @@ void loop()
     } // if the state is '0' the DC motor will turn off
     if (state == 'lock')
     {
-        myservo.write(8);
+        servoExp.write(8);
         delay(1000);
-        Serial.println("Door Locked");
+        Serial.println("Gelu's Door Locked");
     }
     else if (state == 'unlock')
     {
-        myservo.write(55);
+        servoExp.write(55);
         delay(1000);
-        Serial.println("Door UnLocked");
+        Serial.println("Gelu's Door UnLocked");
     }
 }
