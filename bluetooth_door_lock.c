@@ -17,13 +17,13 @@ void loop()
         state = Serial.read();
         flag = 0;
     } // if the state is '0' the DC motor will turn off
-    if (state == 'lock')
+    if (state == '0')
     {
         servoExp.write(8);
         delay(1000);
         Serial.println("Gelu's Door Locked");
     }
-    else if (state == 'unlock')
+    else if (state == '1')
     {
         servoExp.write(55);
         delay(1000);
